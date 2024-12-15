@@ -24,14 +24,14 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build --if-present
+          npm run build  # This builds the app for production
           npm run test --if-present
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: ./build 
 
   deploy:
     runs-on: ubuntu-latest
@@ -61,5 +61,4 @@ jobs:
         with:
           app-name: 'smart-cricket-analysis'
           slot-name: 'Production'
-          package: .
-          
+          package: './build'
