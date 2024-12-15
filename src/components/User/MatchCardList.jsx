@@ -13,7 +13,7 @@ const MatchCardList = ({ league }) => {
   const [matchData, setMatchData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/matches/${league}`)
+    fetch(`https://smart-cricket-dqfbhtegeuhse0ct.eastasia-01.azurewebsites.net/matches/${league}`)
       .then((response) => response.json())
       .then((data) => {
         setMatchData(data);

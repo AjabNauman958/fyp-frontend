@@ -61,7 +61,7 @@ const CricketRankings = () => {
   const [womenst20Teams, setWomenT20Teams] = useState([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/teams/ranking/top/5')
+    fetch('https://smart-cricket-dqfbhtegeuhse0ct.eastasia-01.azurewebsites.net/teams/ranking/top/5')
       .then((response) => response.json())
       .then((data) => {
         // Assuming the response contains rankings in this format
